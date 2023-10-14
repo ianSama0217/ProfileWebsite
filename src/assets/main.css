@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "myFont";
+  src: url("../../Graffiti.ttf");
+}
+
+* {
+  background-color: #636363;
+  color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "myFont", sans-serif;
+}
