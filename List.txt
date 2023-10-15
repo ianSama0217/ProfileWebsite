@@ -1,11 +1,15 @@
 統一文字樣式
+每個段落的標題3rem
 大標題2rem
 副標題1.5rem
 文字內容0.8~1.2rem
 
 進度
+10/15
 navbar 〇
 footer 〇
+dogcard component　〇　bug(圖片沒辦法從子子物件傳遞到父物件，最後把子物件直接放4個卡片，有點白痴)
+AboutView完成75%
 
 參考資料
 字體ttf download url
