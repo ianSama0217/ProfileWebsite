@@ -1,4 +1,16 @@
+統一文字樣式
+大標題2rem
+副標題1.5rem
+文字內容0.8~1.2rem
+
+進度
+navbar 〇
+footer 〇
+
 參考資料
 字體ttf download url
 https://www.twfont.com/chinese/Graffiti.php#google_vignette
+
+狗勾影片url
+https://www.youtube.com/watch?v=3D7tb6FEjiM
 
