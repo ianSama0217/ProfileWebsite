@@ -10,6 +10,8 @@ navbar 〇
 footer 〇
 dogcard component　〇　bug(圖片沒辦法從子子物件傳遞到父物件，最後把子物件直接放4個卡片，有點白痴)
 AboutView完成75%
+10/16
+ProjectView 〇 (主頁面完成，之後要設定每個網站的子路徑)
 
 參考資料
 字體ttf download url
