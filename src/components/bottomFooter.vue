@@ -32,12 +32,12 @@
             title="fontawesome-icon"
           />
         </a>
-        <a href="https://www.pexels.com/zh-tw/" target="_blank">
+        <a href="https://www.npmjs.com/" target="_blank">
           <img
-            src="../../public/icon/pexels-icon.svg"
+            src="../../public/icon/npm-icon.svg"
             class="icon"
-            alt="pexels-icon"
-            title="pexels-icon"
+            alt="npm-icon"
+            title="npm-icon"
           />
         </a>
         <a href="https://www.pexels.com/zh-tw/" target="_blank">
@@ -75,7 +75,7 @@
       </div>
     </div>
 
-    <span>Copyright© 2023 ian | web design</span>
+    <span>Copyright 2023 ian | web design</span>
   </div>
 </template>
 

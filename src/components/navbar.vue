@@ -12,7 +12,7 @@ import { RouterLink, RouterView } from "vue-router";
     />
     <div class="navbarRouterLinks">
       <RouterLink to="/" class="link">個人簡介</RouterLink>
-      <RouterLink to="/note" class="link">Vue課堂筆記</RouterLink>
+      <RouterLink to="/note" class="link">課堂筆記</RouterLink>
       <RouterLink to="/project" class="link">作品集</RouterLink>
     </div>
     <div class="navbarSocialIcon">
