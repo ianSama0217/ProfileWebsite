@@ -12,6 +12,9 @@ dogcard component　〇　bug(圖片沒辦法從子子物件傳遞到父物件�
 AboutView完成75%
 10/16
 ProjectView 〇 (主頁面完成，之後要設定每個網站的子路徑)
+NoteView 50% (缺封面動畫)(之後要設定每個LOGO的子路徑)
+Error404View 100% 
+10/17
 
 參考資料
 字體ttf download url
