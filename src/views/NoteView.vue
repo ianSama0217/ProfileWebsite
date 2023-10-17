@@ -1,10 +1,10 @@
 <script setup>
-import { RouterLink } from "vue-router";
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
   <div class="logoBar">
-    <RouterLink to="" class="link">
+    <RouterLink to="/note/building" class="link">
       <h1>HTML</h1>
       <img
         src="../../public/noteImg/html5.svg"
@@ -14,7 +14,7 @@ import { RouterLink } from "vue-router";
       />
     </RouterLink>
 
-    <RouterLink to="" class="link">
+    <RouterLink to="/note/building" class="link">
       <h1>CSS</h1>
       <img
         src="../../public/noteImg/css3.svg"
@@ -24,7 +24,7 @@ import { RouterLink } from "vue-router";
       />
     </RouterLink>
 
-    <RouterLink to="" class="link">
+    <RouterLink to="/note/building" class="link">
       <h1>JavaScript</h1>
       <img
         src="../../public/noteImg/js.svg"
@@ -34,7 +34,7 @@ import { RouterLink } from "vue-router";
       />
     </RouterLink>
 
-    <RouterLink to="" class="link">
+    <RouterLink to="/note/vueNote" class="link">
       <H1>Vue</H1>
       <img
         src="../../public/noteImg/vuejs.svg"
@@ -44,6 +44,8 @@ import { RouterLink } from "vue-router";
       />
     </RouterLink>
   </div>
+
+  <RouterView />
 </template>
 
 <style scoped lang="scss">
