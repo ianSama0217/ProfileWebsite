@@ -48,12 +48,12 @@
             title="pexels-icon"
           />
         </a>
-        <a href="https://www.pexels.com/zh-tw/" target="_blank">
+        <a href="https://www.netlify.com/" target="_blank">
           <img
-            src="../../public/icon/pexels-icon.svg"
+            src="../../public/icon/netlify-icon.svg"
             class="icon"
-            alt="pexels-icon"
-            title="pexels-icon"
+            alt="netfily-icon"
+            title="netfily-icon"
           />
         </a>
         <a href="https://www.pexels.com/zh-tw/" target="_blank">
