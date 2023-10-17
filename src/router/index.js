@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 //匯入NoteView的子路經
 import VueNoteView from "../views/noteChildren/VueNoteView.vue";
 import BuildNoteView from "../views/noteChildren/BuildNoteView.vue";
+//匯入ProjectView的子路徑
+import ExpenseTrackerView from "../views/projectChildren/ExpenseTrackerView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,6 +32,12 @@ const router = createRouter({
       path: "/project",
       name: "project",
       component: () => import("../views/ProjectView.vue"),
+      children: [
+        {
+          path: "expenseTracker",
+          component: ExpenseTrackerView,
+        },
+      ],
     },
     {
       //防止路徑輸入錯誤
