@@ -1,4 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
+//匯入NoteView的子路經
+import VueNoteView from "../views/noteChildren/VueNoteView.vue";
+import BuildNoteView from "../views/noteChildren/BuildNoteView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,6 +15,16 @@ const router = createRouter({
       path: "/note",
       name: "note",
       component: () => import("../views/NoteView.vue"),
+      children: [
+        {
+          path: "vueNote",
+          component: VueNoteView,
+        },
+        {
+          path: "building",
+          component: BuildNoteView,
+        },
+      ],
     },
     {
       path: "/project",
