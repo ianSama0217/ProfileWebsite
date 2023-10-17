@@ -1,10 +1,13 @@
 <script setup>
 import projectCrad from "../components/projectCrad.vue";
+import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <h1>我的作品集</h1>
+  <!-- 點擊作品後展示的作品頁面 -->
+  <RouterView />
 
+  <h1>我的作品集</h1>
   <div class="projectArea">
     <projectCrad
       :img="{
@@ -13,6 +16,7 @@ import projectCrad from "../components/projectCrad.vue";
         title: `記帳網站`,
       }"
       projectTitle="記帳網站"
+      link="/project/expenseTracker"
     />
 
     <projectCrad
