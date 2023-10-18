@@ -4,6 +4,12 @@ import VueNoteView from "../views/noteChildren/VueNoteView.vue";
 import BuildNoteView from "../views/noteChildren/BuildNoteView.vue";
 //匯入ProjectView的子路徑
 import ExpenseTrackerView from "../views/projectChildren/ExpenseTrackerView.vue";
+import DessertView from "../views/projectChildren/DessertView.vue";
+import SaleHouseView from "../views/projectChildren/SaleHouseView.vue";
+import GPACalculationView from "../views/projectChildren/GPACalculationView.vue";
+import JapanTravelView from "../views/projectChildren/japanTravelView.vue";
+import RamenYaView from "../views/projectChildren/RamenYaView.vue";
+import WeatherAPIView from "../views/projectChildren/WeatherAPIView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -36,6 +42,30 @@ const router = createRouter({
         {
           path: "expenseTracker",
           component: ExpenseTrackerView,
+        },
+        {
+          path: "dessert",
+          component: DessertView,
+        },
+        {
+          path: "saleHouse",
+          component: SaleHouseView,
+        },
+        {
+          path: "GPAcolculation",
+          component: GPACalculationView,
+        },
+        {
+          path: "japanTravel",
+          component: JapanTravelView,
+        },
+        {
+          path: "ramenya",
+          component: RamenYaView,
+        },
+        {
+          path: "weatherAPI",
+          component: WeatherAPIView,
         },
       ],
     },
