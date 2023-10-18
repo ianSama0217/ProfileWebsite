@@ -26,6 +26,7 @@ import { RouterView } from "vue-router";
         title: `甜點網站`,
       }"
       projectTitle="甜點網站"
+      link="/project/dessert"
     />
 
     <projectCrad
@@ -35,6 +36,7 @@ import { RouterView } from "vue-router";
         title: `房屋網站`,
       }"
       projectTitle="房屋網站"
+      link="/project/saleHouse"
     />
 
     <projectCrad
@@ -44,6 +46,7 @@ import { RouterView } from "vue-router";
         title: `成績計算網站`,
       }"
       projectTitle="成績計算網站"
+      link="/project/GPAcolculation"
     />
 
     <projectCrad
@@ -53,6 +56,7 @@ import { RouterView } from "vue-router";
         title: `日本旅遊網站`,
       }"
       projectTitle="日本旅遊網站"
+      link="/project/japanTravel"
     />
 
     <projectCrad
@@ -62,6 +66,7 @@ import { RouterView } from "vue-router";
         title: `ラーメン屋網站`,
       }"
       projectTitle="ラーメン屋網站"
+      link="/project/ramenya"
     />
 
     <projectCrad
@@ -71,6 +76,7 @@ import { RouterView } from "vue-router";
         title: `天氣預報網站`,
       }"
       projectTitle="天氣預報網站"
+      link="/project/weatherAPI"
     />
   </div>
 </template>

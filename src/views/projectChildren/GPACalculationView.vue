@@ -7,18 +7,18 @@ import changeProjectButton from "../../components/singleProjectComponent/changeP
 
 const programToolContent = ref("前端:HTML、CSS、JS <br> 框架:無 <br> 套件:無");
 const useContent = ref(
-  "製作記帳網站，可以儲存收入與支出，並計算出總收入、總支出及結餘，關閉網頁後，資料也會儲存在localStorage之中不會消失。"
+  "製作成績計算網站，可以輸入學分數和成績，並計算出GPA。可以使用新增和刪除按鈕編輯輸入框，還有升序和降序按鈕將成績做排列。"
 );
 
-const src = ref("https://expensetracker1006.netlify.app/");
-const webURL = ref("https://expensetracker1006.netlify.app/");
-const githubURL = ref("https://github.com/ianSama0217/expenseTrackerWeb");
-const previousPage = ref("/project/weatherAPI");
-const nextPage = ref("/project/dessert");
+const src = ref("https://gpacalculategpa.netlify.app/");
+const webURL = ref("https://gpacalculategpa.netlify.app/");
+const githubURL = ref("https://github.com/ianSama0217/GPACalculation");
+const previousPage = ref("/project/saleHouse");
+const nextPage = ref("/project/japanTravel");
 </script>
 
 <template>
-  <h1>記帳網站</h1>
+  <h1>成績計算網站</h1>
   <div class="flexbox">
     <sideContentBar
       :programToolContent="programToolContent"

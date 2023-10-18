@@ -7,18 +7,18 @@ import changeProjectButton from "../../components/singleProjectComponent/changeP
 
 const programToolContent = ref("前端:HTML、CSS、JS <br> 框架:無 <br> 套件:無");
 const useContent = ref(
-  "製作記帳網站，可以儲存收入與支出，並計算出總收入、總支出及結餘，關閉網頁後，資料也會儲存在localStorage之中不會消失。"
+  "製作天氣預報網站，使用中央氣象局API抓取當日18點至隔日清晨6點的天氣預報，可選擇台灣各縣市的天氣預報。"
 );
 
-const src = ref("https://expensetracker1006.netlify.app/");
-const webURL = ref("https://expensetracker1006.netlify.app/");
-const githubURL = ref("https://github.com/ianSama0217/expenseTrackerWeb");
-const previousPage = ref("/project/weatherAPI");
-const nextPage = ref("/project/dessert");
+const src = ref("https://taiwanweathersearch36hr.netlify.app/");
+const webURL = ref("https://taiwanweathersearch36hr.netlify.app/");
+const githubURL = ref("https://github.com/ianSama0217/getWeatherAPI");
+const previousPage = ref("/project/ramenya");
+const nextPage = ref("/project/expenseTracker");
 </script>
 
 <template>
-  <h1>記帳網站</h1>
+  <h1>天氣預報網站</h1>
   <div class="flexbox">
     <sideContentBar
       :programToolContent="programToolContent"

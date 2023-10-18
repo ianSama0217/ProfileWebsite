@@ -5,20 +5,22 @@ import webiframe from "../../components/singleProjectComponent/webiframe.vue";
 import aLinkButton from "../../components/singleProjectComponent/aLinkButton.vue";
 import changeProjectButton from "../../components/singleProjectComponent/changeProjectButton.vue";
 
-const programToolContent = ref("前端:HTML、CSS、JS <br> 框架:無 <br> 套件:無");
+const programToolContent = ref(
+  "前端:HTML、CSS、JS <br> 框架:無 <br> 套件:Bootstrap"
+);
 const useContent = ref(
-  "製作記帳網站，可以儲存收入與支出，並計算出總收入、總支出及結餘，關閉網頁後，資料也會儲存在localStorage之中不會消失。"
+  "製作房屋網站，可以瀏覽房屋資訊，點進不同分頁，觀看各種相關資訊，首頁的輪播功能使用bootstrap元件製作。"
 );
 
-const src = ref("https://expensetracker1006.netlify.app/");
-const webURL = ref("https://expensetracker1006.netlify.app/");
-const githubURL = ref("https://github.com/ianSama0217/expenseTrackerWeb");
-const previousPage = ref("/project/weatherAPI");
-const nextPage = ref("/project/dessert");
+const src = ref("https://housesalewebsite.netlify.app/");
+const webURL = ref("https://housesalewebsite.netlify.app/");
+const githubURL = ref("https://github.com/ianSama0217/houseSaleWebsite");
+const previousPage = ref("/project/dessert");
+const nextPage = ref("/project/GPAcolculation");
 </script>
 
 <template>
-  <h1>記帳網站</h1>
+  <h1>房屋網站</h1>
   <div class="flexbox">
     <sideContentBar
       :programToolContent="programToolContent"
