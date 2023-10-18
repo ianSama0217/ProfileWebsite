@@ -20,6 +20,9 @@ BuildNoteView 100%
 VueNoteView 5% (剛建立子路徑)
 建立ProjectView子路徑網頁的4個組件 〇
 ProjectView(建立好""記帳網站""的子路徑，剩< >按鈕還沒加上routerlink)
+10/18
+完成project內的所有子路徑(如果有時間iframe內做一個讀取動畫)
+☆點擊子路徑後，ProjectView渲染要消失
 
 參考資料
 字體ttf download url
