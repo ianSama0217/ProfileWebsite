@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 //匯入NoteView的子路經
-import VueNoteView from "../views/noteChildren/VueNoteView.vue";
-import BuildNoteView from "../views/noteChildren/BuildNoteView.vue";
+
 //匯入ProjectView的子路徑
 import ExpenseTrackerView from "../views/projectChildren/ExpenseTrackerView.vue";
 import DessertView from "../views/projectChildren/DessertView.vue";
@@ -23,16 +22,7 @@ const router = createRouter({
       path: "/note",
       name: "note",
       component: () => import("../views/NoteView.vue"),
-      children: [
-        {
-          path: "vueNote",
-          component: VueNoteView,
-        },
-        {
-          path: "building",
-          component: BuildNoteView,
-        },
-      ],
+      children: [],
     },
     {
       path: "/project",
