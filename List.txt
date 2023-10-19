@@ -4,7 +4,7 @@
 副標題1.5rem
 文字內容0.8~1.2rem
 
-進度
+進度:
 10/15
 navbar 〇
 footer 〇
@@ -23,6 +23,10 @@ ProjectView(建立好""記帳網站""的子路徑，剩< >按鈕還沒加上rout
 10/18
 完成project內的所有子路徑(如果有時間iframe內做一個讀取動畫)
 ☆點擊子路徑後，ProjectView渲染要消失
+10/19
+NoteView介面完成 〇 (子路徑還沒設定，想做動態的)
+
+
 
 參考資料
 字體ttf download url
