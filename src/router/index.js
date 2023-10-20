@@ -9,6 +9,12 @@ import GPACalculationView from "../views/projectChildren/GPACalculationView.vue"
 import JapanTravelView from "../views/projectChildren/japanTravelView.vue";
 import RamenYaView from "../views/projectChildren/RamenYaView.vue";
 import WeatherAPIView from "../views/projectChildren/WeatherAPIView.vue";
+//匯入NoteView的子路徑(動態)
+import DirectivesNoteView from "../views/noteChildren/DirectivesNoteView.vue";
+import RouterNoteView from "../views/noteChildren/RouterNoteView.vue";
+import LifeCycleNoteView from "../views/noteChildren/LifeCycleNoteView.vue";
+import CompositionAPINoteView from "../views/noteChildren/ReactivityCoreNoteView.vue";
+import PiniaNoteView from "../views/noteChildren/PiniaNoteView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,7 +28,28 @@ const router = createRouter({
       path: "/note",
       name: "note",
       component: () => import("../views/NoteView.vue"),
-      children: [],
+      children: [
+        {
+          path: "Directives/:domain",
+          component: DirectivesNoteView,
+        },
+        {
+          path: "Router/:domain",
+          component: RouterNoteView,
+        },
+        {
+          path: "LifeCycle/:domain",
+          component: LifeCycleNoteView,
+        },
+        {
+          path: "CompositionAPI/:domain",
+          component: CompositionAPINoteView,
+        },
+        {
+          path: "Pinia/:domain",
+          component: PiniaNoteView,
+        },
+      ],
     },
     {
       path: "/project",
