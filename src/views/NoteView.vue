@@ -3,9 +3,6 @@ import { ref } from "vue";
 import { RouterLink, RouterView, useRoute } from "vue-router";
 import noteCard from "../components/noteCard.vue";
 
-const route = useRoute();
-console.log(route);
-
 const DirectivesTitle = ref("template語法");
 //router to=""的值
 const DirectivesLink = ref([
@@ -98,8 +95,6 @@ const PiniaLinkName = ref(["About Pinia"]);
 </script>
 
 <template>
-  <!-- 顯示Note/:domain子路徑 -->
-  <RouterView />
   <!-- <img src="../../public/noteImg/vuejs.svg" alt="vue-logo" class="logoImg" /> -->
   <div class="waterfallflow">
     <!-- template語法box -->
@@ -138,6 +133,9 @@ const PiniaLinkName = ref(["About Pinia"]);
       class="noteCard"
     />
   </div>
+
+  <!-- 顯示Note/:domain子路徑 -->
+  <RouterView />
 </template>
 
 <style scoped lang="scss">
