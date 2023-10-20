@@ -9,15 +9,22 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  linkName: {
+    type: Array,
+    default: () => [],
+  },
 });
 </script>
 
 <template>
   <div class="noteLinkBox">
     <h3 class="noteTitle">{{ title }}</h3>
-    <RouterLink class="noteLink" :to="item" v-for="item in link">{{
-      item
-    }}</RouterLink>
+    <RouterLink
+      class="noteLink"
+      :to="link[index]"
+      v-for="(item, index) in linkName"
+      >{{ item }}</RouterLink
+    >
   </div>
 </template>
 
