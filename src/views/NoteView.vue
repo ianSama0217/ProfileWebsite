@@ -87,6 +87,12 @@ const CompositionAPILinkName = ref([
   "watch()",
 ]);
 
+const ComponentTitle = ref("Compontent");
+//router to=""的值
+const ComponentLink = ref(["/note/Compontent/props", "/note/Compontent/emit"]);
+//標籤內名稱<routerlink>ComponentLinkName</routerlink>
+const ComponentLinkName = ref(["props", "emit"]);
+
 const PiniaTitle = ref("Pinia");
 //router to=""的值
 const PiniaLink = ref(["/note/Pinia/About Pinia"]);
@@ -123,6 +129,13 @@ const PiniaLinkName = ref(["About Pinia"]);
       :title="CompositionAPITitle"
       :link="CompositionAPILink"
       :linkName="CompositionAPILinkName"
+      class="noteCard"
+    />
+    <!-- Compontent語法box -->
+    <noteCard
+      :title="ComponentTitle"
+      :link="ComponentLink"
+      :linkName="ComponentLinkName"
       class="noteCard"
     />
     <!-- Pinia語法box -->

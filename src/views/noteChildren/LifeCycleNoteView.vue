@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 import { RouterLink } from "vue-router";
 import codeboard from "../../components/codeboard.vue";
 import noteCard from "../../components/noteCard.vue";
@@ -88,15 +88,23 @@ const CompositionAPILinkName = ref([
   "watch()",
 ]);
 
+const ComponentTitle = ref("Compontent");
+//router to=""的值
+const ComponentLink = ref(["/note/Compontent/props", "/note/Compontent/emit"]);
+//標籤內名稱<routerlink>ComponentLinkName</routerlink>
+const ComponentLinkName = ref(["props", "emit"]);
+
 const PiniaTitle = ref("Pinia");
 //router to=""的值
 const PiniaLink = ref(["/note/Pinia/About Pinia"]);
 //標籤內名稱<routerlink>PiniaLinkName</routerlink>
 const PiniaLinkName = ref(["About Pinia"]);
+
+//codeboard標題~內容
+const codeObject = reactive({});
 </script>
 
 <template>
-  <h1>生命週期筆記</h1>
   <div class="body">
     <div class="sideBar">
       <!-- 左邊放所有note的選單 -->
@@ -135,6 +143,13 @@ const PiniaLinkName = ref(["About Pinia"]);
         :linkName="CompositionAPILinkName"
         class="noteCard"
       />
+      <!-- Compontent語法box -->
+      <noteCard
+        :title="ComponentTitle"
+        :link="ComponentLink"
+        :linkName="ComponentLinkName"
+        class="noteCard"
+      />
       <!-- Pinia語法box -->
       <noteCard
         :title="PiniaTitle"
@@ -145,26 +160,7 @@ const PiniaLinkName = ref(["About Pinia"]);
     </div>
     <!-- 右邊放筆記內容 -->
     <div class="codeSide">
-      <codeboard
-        codeNoteTitle="v-text"
-        codeSource="console.log(`Hello world`)!
-  <template>
-    <div>
-      <!-- 其他父路由内容 -->
-      <router-view>sdhkasndkansdk</router-view>
-    </div>
-  </template>
-
-  <style scoped lang=`scss`>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }</style
-  >"
-        codeNoteContent="這個指令沒什麼用"
-        codeNoteHint="v-html比較好用"
-      />
+      <codeboard :codeNote="codeObject" />
     </div>
   </div>
 </template>
@@ -174,6 +170,7 @@ const PiniaLinkName = ref(["About Pinia"]);
   display: flex;
   position: relative;
   .sideBar {
+    width: 55vw;
     height: 100vh;
     padding-top: 1.5rem;
     display: flex;
@@ -191,7 +188,7 @@ const PiniaLinkName = ref(["About Pinia"]);
     }
   }
   .codeSide {
-    padding-left: 10vw;
+    padding: 0 10vw;
     display: flex;
     flex-direction: column;
   }

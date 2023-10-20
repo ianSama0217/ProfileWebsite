@@ -101,7 +101,20 @@ const PiniaLink = ref(["/note/Pinia/About Pinia"]);
 const PiniaLinkName = ref(["About Pinia"]);
 
 //codeboard標題~內容
-const codeObject = reactive({});
+const codeObject = reactive({
+  props: {
+    title: "",
+    source: ``,
+    content: "",
+    hint: "",
+  },
+  emit: {
+    title: "",
+    source: ``,
+    content: "",
+    hint: "",
+  },
+});
 </script>
 
 <template>
