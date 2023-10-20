@@ -25,7 +25,11 @@ ProjectView(建立好""記帳網站""的子路徑，剩< >按鈕還沒加上rout
 ☆點擊子路徑後，ProjectView渲染要消失
 10/19
 NoteView介面完成 〇 (子路徑還沒設定，想做動態的)
-
+☆做好NoteView的子路徑後，要把noteView的測試用codeborad刪除
+10/20
+先做動態路由-->再放入code board
+建立好所有noteView的子路徑(所有子路徑畫面都能正常顯示)(沒有防呆)
+晚點從v-html開始做
 
 
 參考資料
@@ -34,4 +38,10 @@ https://www.twfont.com/chinese/Graffiti.php#google_vignette
 
 狗勾影片url
 https://www.youtube.com/watch?v=3D7tb6FEjiM
+
+安裝prism document
+https://socket.dev/npm/package/vue3-prism
+
+動態router部屬(IDyt)
+https://www.youtube.com/watch?v=LjrSTftqP0U
 
