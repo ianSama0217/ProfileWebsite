@@ -1,31 +1,20 @@
 <script setup>
 const props = defineProps({
-  codeNoteTitle: {
-    type: String,
-    default: "",
-  },
-  codeSource: {
-    type: String,
-    default: "",
-  },
-  codeNoteContent: {
-    type: String,
-    default: "",
-  },
-  //比較重要的筆記內容(可有可無)
-  codeNoteHint: {
-    type: String,
-    default: "",
+  codeNote: {
+    type: Object,
+    default: () => ({}),
   },
 });
 </script>
 
 <template>
-  <div class="codeBox">
-    <h3 class="title">{{ props.codeNoteTitle }}</h3>
-    <Vue3Prism class="Vue3Prism" :source="props.codeSource"></Vue3Prism>
-    <p class="content">{{ props.codeNoteContent }}</p>
-    <p class="hint">{{ props.codeNoteHint }}</p>
+  <div class="codeBox" v-for="item in codeNote">
+    <h3 class="title">{{ item.title }}</h3>
+    <Vue3Prism class="Vue3Prism" :source="item.source"></Vue3Prism>
+    <p class="content">
+      {{ item.content }}
+    </p>
+    <p class="hint">{{ item.hint }}</p>
     <hr />
     <br />
   </div>
