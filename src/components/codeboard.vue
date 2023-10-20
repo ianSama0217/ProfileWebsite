@@ -33,7 +33,6 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .codeBox {
-  border: 1px solid red;
   margin: 1rem 0;
   display: flex;
   flex-direction: column;
