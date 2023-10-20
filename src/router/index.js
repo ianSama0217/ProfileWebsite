@@ -14,6 +14,7 @@ import DirectivesNoteView from "../views/noteChildren/DirectivesNoteView.vue";
 import RouterNoteView from "../views/noteChildren/RouterNoteView.vue";
 import LifeCycleNoteView from "../views/noteChildren/LifeCycleNoteView.vue";
 import CompositionAPINoteView from "../views/noteChildren/ReactivityCoreNoteView.vue";
+import ComponentNoteView from "../views/noteChildren/CompontentNoteView.vue";
 import PiniaNoteView from "../views/noteChildren/PiniaNoteView.vue";
 
 const router = createRouter({
@@ -44,6 +45,10 @@ const router = createRouter({
         {
           path: "CompositionAPI/:domain",
           component: CompositionAPINoteView,
+        },
+        {
+          path: "Compontent/:domain",
+          component: ComponentNoteView,
         },
         {
           path: "Pinia/:domain",
