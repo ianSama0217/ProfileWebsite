@@ -101,11 +101,103 @@ const PiniaLink = ref(["/note/Pinia/About Pinia"]);
 const PiniaLinkName = ref(["About Pinia"]);
 
 //codeboard標題~內容
-const codeObject = reactive({});
+const codeObject = reactive({
+  "ref()": {
+    title: "ref()",
+    source: `<script setup>
+import { ref, reactive, computed } from "vue";
+
+const name = ref("Jack");
+console.log(name.value); //Jack
+<script>`,
+    content:
+      "ref()可創建所有資料型態的響應式數據，創建完後放入HTML標籤即可使用",
+    hint: "ref()放入Object，Object的資料改變不會被watch監測，若資料型態為Object，建議使用reactive()。變更ref資料時要輸入變數名稱.value才是指定變數的value",
+  },
+  "reactive()": {
+    title: "reactive()",
+    source: `<script setup>
+import { ref, reactive, computed } from "vue";
+
+const name = ref("Jack");
+
+const nameObject = reactive({
+  name: name,
+});
+
+console.assertlog(nameObject.name == name.value); //true
+<script>`,
+    content:
+      "reactive()只能放Array和Object兩種資料型態，通常只有Object才會使用reactive()",
+    hint: "reactive()如果使用ref宣告的value的話，直接放入變數名稱就會自動解包，不用再加上.value",
+  },
+  "computed()": {
+    title: "computed()",
+    source: `<script setup>
+import { ref, computed } from "vue";
+
+const num = ref(1);
+
+const isBigThan3 = computed(() => {
+  if (num.value > 3) {
+    return num.value + "大於3";
+  } else {
+    return num.value + "小於等於於3";
+  }
+});
+<script>`,
+    content: "computed通常用於進行計算和更改資料",
+    hint: "computed()裡面的callback function的()不能宣告參數，computed()要使用ref()要加上.value才能取得資料",
+  },
+  "computed()": {
+    title: "computed() get & set",
+    source: `<script setup>
+const count = ref(1);
+const setCount = computed({
+  get: () => count.value,
+  set: (val) => {
+    count.value = val;
+  },
+});
+
+console.log(setCount.value); // 1
+setCount.value = 5;
+console.log(setCount.value); // 5
+console.log(count.value); // 5 count資料跟著被改變
+<script>`,
+    content:
+      "computed()可以創建一個物件放入get和set分別執行不同的函式，get取得value，set設定value",
+    hint: "computed()要印出value的話也要加上.value，set的value改變之後，如果改變對象是響應式數據，那value的資料都會被改變",
+  },
+  "readonly()": {
+    title: "readonly()",
+    source: `<script setup>
+const original = reactive({ count: 0 });
+const copy = readonly(original); //不能修改copy這個變數
+
+original.count++; //original可以更新value
+copy.count++; // 系統會報錯
+<script>`,
+    content:
+      "readonly()可以建立一個不能編輯的變數，如果不希望資料被更改可以使用這個方法",
+    hint: "",
+  },
+  "watch()": {
+    title: "watch()",
+    source: `<script setup>
+const count = ref(0);
+//watch() 參數1:要監測的變數 參數2:當change觸發，要執行的函式
+watch(count, (oldValue, newValue) => {
+  console.log(oldValue, newValue);
+});
+<script>`,
+    content: "當watch監測的變數發生change事件，就執行callback function",
+    hint: "",
+  },
+});
 </script>
 
 <template>
-  <h1>composition api筆記</h1>
   <div class="body">
     <div class="sideBar">
       <!-- 左邊放所有note的選單 -->
@@ -171,7 +263,7 @@ const codeObject = reactive({});
   display: flex;
   position: relative;
   .sideBar {
-    width: 55vw;
+    width: 50vw;
     height: 100vh;
     padding-top: 1.5rem;
     display: flex;
