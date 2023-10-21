@@ -103,22 +103,94 @@ const PiniaLinkName = ref(["About Pinia"]);
 //codeboard標題~內容
 const codeObject = reactive({
   props: {
-    title: "",
-    source: ``,
-    content: "",
+    title: "props",
+    source: `<script setup>
+const props = defineProps({
+  name: {
+    type: String,
+    default: "",
+    required: true, //設定是否為必填
+  },
+  age: {
+    type: Number,
+    default: null,
+    required: true,
+    //自定義函式 會回傳true表示驗證通過 false表示失敗
+    validator: (value) => {
+      return value >= 18;
+    },
+    //強制轉換prop值的自定義函式
+    coerce: (value) => {
+      return parseInt(value);
+    },
+  },
+  isMarried: {
+    type: Boolean,
+    default: false,
+  },
+  Function: {
+    type: Function,
+    default: () => {
+      console.log("hello world");
+    },
+  },
+  Array: {
+    type: Array,
+    default: () => [],
+  },
+  Object: {
+    type: Object,
+    default: () => ({}),
+  },
+});
+<script>`,
+    content:
+      "props讓父組件可以賦予子組件的標籤屬性或文字，props可以是各種資料型態，宣告資料型態時，第一個字母要記得大寫",
+    hint: "props的type為object或array時，設定default時要特別注意(如上圖)",
+  },
+  emitChildComponent: {
+    title: "emits",
+    source: `<script setup>
+const emit = defineEmits("childComponent");
+
+const emitEvent = () => {
+  //emit參數1:定義事件名稱 參數2:定義事件要傳遞的值
+  emit("childComponent", "這是子組件的emit事件傳遞");
+};
+<script>
+
+<template>
+  <button @click="emitEvent">click</button>
+</template>`,
+    content:
+      "emits透過子組件元素觸發自定義事件，將子組件資料傳遞給父組件，通常會搭配按鈕使用",
     hint: "",
   },
-  emit: {
-    title: "",
-    source: ``,
-    content: "",
+  emitParentComponent: {
+    title: "emits父組件",
+    source: `<script setup>
+import { ref } from "vue";
+import testComponent from "../components/testComponent.vue";
+
+const childData = ref("");
+
+const getChildData = (data) => {
+  childData.value = data;
+};
+<script>
+
+<template>
+  <testComponent @childComponent="getChildData" />
+  <h1>{{ childData }}</h1>
+</template>`,
+    content:
+      "父組件透過emits定義的方法名稱來取得子組件傳遞的資料，通常也都是用按鈕來觸發事件",
     hint: "",
   },
 });
 </script>
 
 <template>
-  <h1>組件筆記</h1>
   <div class="body">
     <div class="sideBar">
       <!-- 左邊放所有note的選單 -->
@@ -184,7 +256,7 @@ const codeObject = reactive({
   display: flex;
   position: relative;
   .sideBar {
-    width: 55vw;
+    width: 35vw;
     height: 100vh;
     padding-top: 1.5rem;
     display: flex;
