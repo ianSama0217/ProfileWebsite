@@ -32,7 +32,8 @@ NoteView介面完成 〇 (子路徑還沒設定，想做動態的)
 完成DirectivesNoteView.vue所有動態路由(v-slot除外)
 10/21
 完成RouterNoteView.vue所有動態路由
-
+完成CompontentNoteView.vue所有動態路由
+完成ReactivityCoreNoteView.vue所有動態路由
 
 參考資料
 字體ttf download url
