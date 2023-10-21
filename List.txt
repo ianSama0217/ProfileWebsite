@@ -29,7 +29,9 @@ NoteView介面完成 〇 (子路徑還沒設定，想做動態的)
 10/20
 先做動態路由-->再放入code board
 建立好所有noteView的子路徑(所有子路徑畫面都能正常顯示)(沒有防呆)
-晚點從v-html開始做
+完成DirectivesNoteView.vue所有動態路由(v-slot除外)
+10/21
+完成RouterNoteView.vue所有動態路由
 
 
 參考資料
