@@ -56,20 +56,20 @@
             title="netfily-icon"
           />
         </a>
-        <a href="https://www.pexels.com/zh-tw/" target="_blank">
+        <a href="https://chat.openai.com/" target="_blank">
           <img
-            src="../../public/icon/pexels-icon.svg"
+            src="../../public/icon/ChatGPT-icon.svg"
             class="icon"
-            alt="pexels-icon"
-            title="pexels-icon"
+            alt="chatGPT-icon"
+            title="chatGPT-icon"
           />
         </a>
-        <a href="https://www.pexels.com/zh-tw/" target="_blank">
+        <a href="https://vuejs.org/" target="_blank">
           <img
-            src="../../public/icon/pexels-icon.svg"
+            src="../../public/noteImg/vuejs.svg"
             class="icon"
-            alt="pexels-icon"
-            title="pexels-icon"
+            alt="vue-icon"
+            title="vue-icon"
           />
         </a>
       </div>
