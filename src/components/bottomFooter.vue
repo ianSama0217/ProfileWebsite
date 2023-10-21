@@ -75,7 +75,7 @@
       </div>
     </div>
 
-    <span>Copyright 2023 ian | web design</span>
+    <span class="Copyright">Copyright 2023 ian | web design</span>
   </div>
 </template>
 
@@ -166,7 +166,8 @@
     }
   }
 
-  span {
+  .Copyright {
+    font-family: "myFont";
     position: absolute;
     bottom: 2%;
     right: 2%;
