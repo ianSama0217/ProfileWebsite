@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterLink } from "vue-router";
 </script>
 
 <template>
@@ -63,6 +63,11 @@ import { RouterLink, RouterView } from "vue-router";
       .icon {
         height: 4vw;
         width: 4vw;
+        transition: all 0.5s ease;
+
+        &:hover {
+          transform: scale(1.2);
+        }
       }
     }
   }

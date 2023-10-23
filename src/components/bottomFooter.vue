@@ -86,6 +86,7 @@
   padding: 0 20vw 0 2vw;
   border-top: 2px solid #232323;
   position: relative;
+  margin-top: 1rem;
 
   .footerLogo {
     display: flex;
