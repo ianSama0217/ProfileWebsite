@@ -106,11 +106,29 @@ const PiniaLink = ref(["/note/Pinia/About Pinia"]);
 const PiniaLinkName = ref(["About Pinia"]);
 
 //codeboard標題~內容
-const codeObject = reactive({});
+const codeObject = reactive({
+  aboutPinia: {
+    title: "About Pinia",
+    source: `import { ref, computed } from 'vue'
+import { defineStore } from 'pinia'
+
+export const useCounterStore = defineStore('counter', () => {
+  const count = ref(0)
+  const doubleCount = computed(() => count.value * 2)
+  function increment() {
+    count.value++
+  }
+
+  return { count, doubleCount, increment }
+})`,
+    content:
+      "Pinia是Vue.js的存儲庫和管理框架。它主要設計用於構建前端Web應用程序，它使用聲明性語法並提供自己的管理API。Pinia被Vue.js團隊認可為Vuex的可靠替代品，目前是Vue的官方管理庫。",
+    hint: "",
+  },
+});
 </script>
 
 <template>
-  <h1>鳳梨筆記</h1>
   <div class="body">
     <div class="sideBar">
       <!-- 左邊放所有note的選單 -->
@@ -176,7 +194,7 @@ const codeObject = reactive({});
   display: flex;
   position: relative;
   .sideBar {
-    width: 55vw;
+    width: 56vw;
     height: 100vh;
     padding-top: 1.5rem;
     display: flex;
