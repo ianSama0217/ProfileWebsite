@@ -37,10 +37,15 @@ NoteView介面完成 〇 (子路徑還沒設定，想做動態的)
 10/23
 完成DirectivesNoteView.vue所有動態路由
 新增CompontentNoteView.vue動態路由(provide,inject)
+新增lifeCycleNoteView.vue內容(暫時用官方document) 
+新增PiniaNoteView.vue內容(放預設的store.js內容) 
+
 
 預計項目:
-noteview和projectview要把回到頁面page不會顯示的問題修好
-noteview之後點擊不同路徑，要導航到指定的位置(page.y)
+☆noteview和projectview要把回到頁面page不會顯示的問題修好
+☆noteview之後點擊不同路徑，要導航到指定的位置(page.y)
+☆PiniaNote和LifeCycleNote之後要更新內容
+☆之後要放自己的程式碼在lifeCycleNoteView.vue、PiniaNoteView.vue
 
 參考資料
 字體ttf download url
