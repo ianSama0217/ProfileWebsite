@@ -34,6 +34,13 @@ NoteView介面完成 〇 (子路徑還沒設定，想做動態的)
 完成RouterNoteView.vue所有動態路由
 完成CompontentNoteView.vue所有動態路由
 完成ReactivityCoreNoteView.vue所有動態路由
+10/23
+完成DirectivesNoteView.vue所有動態路由
+新增CompontentNoteView.vue動態路由(provide,inject)
+
+預計項目:
+noteview和projectview要把回到頁面page不會顯示的問題修好
+noteview之後點擊不同路徑，要導航到指定的位置(page.y)
 
 參考資料
 字體ttf download url
