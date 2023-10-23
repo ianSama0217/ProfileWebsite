@@ -13,6 +13,10 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
+  isDisplayNoteView: {
+    type: Function,
+    default: () => {},
+  },
 });
 </script>
 
@@ -21,6 +25,7 @@ const props = defineProps({
     <h3 class="noteTitle">{{ title }}</h3>
     <RouterLink
       class="noteLink"
+      @click="isDisplayNoteView"
       :to="link[index]"
       v-for="(item, index) in linkName"
       >{{ item }}</RouterLink

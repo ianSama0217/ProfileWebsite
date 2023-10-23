@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import { RouterLink, RouterView, useRoute } from "vue-router";
+import { RouterView } from "vue-router";
 import noteCard from "../components/noteCard.vue";
 
 const DirectivesTitle = ref("template語法");
@@ -103,16 +103,24 @@ const PiniaTitle = ref("Pinia");
 const PiniaLink = ref(["/note/Pinia/About Pinia"]);
 //標籤內名稱<routerlink>PiniaLinkName</routerlink>
 const PiniaLinkName = ref(["About Pinia"]);
+
+//設定點擊router隱藏NoteView渲染畫面
+const isDisplay = ref(true);
+
+const isDisplayNoteView = () => {
+  isDisplay.value = false;
+};
 </script>
 
 <template>
   <!-- <img src="../../public/noteImg/vuejs.svg" alt="vue-logo" class="logoImg" /> -->
-  <div class="waterfallflow">
+  <div class="waterfallflow" v-show="isDisplay">
     <!-- template語法box -->
     <noteCard
       :title="DirectivesTitle"
       :link="DirectivesLink"
       :linkName="DirectivesLinkName"
+      :isDisplayNoteView="isDisplayNoteView"
       class="noteCard"
     />
     <!-- Router語法box -->
@@ -120,6 +128,7 @@ const PiniaLinkName = ref(["About Pinia"]);
       :title="RouterDocTitle"
       :link="RouterDocLink"
       :linkName="RouterDocLinkName"
+      :isDisplayNoteView="isDisplayNoteView"
       class="noteCard"
     />
     <!-- Lifecycle語法box -->
@@ -127,6 +136,7 @@ const PiniaLinkName = ref(["About Pinia"]);
       :title="LifecycleTitle"
       :link="LifecycleLink"
       :linkName="LifecycleLinkName"
+      :isDisplayNoteView="isDisplayNoteView"
       class="noteCard"
     />
     <!-- CompositionAPI語法box -->
@@ -134,6 +144,7 @@ const PiniaLinkName = ref(["About Pinia"]);
       :title="CompositionAPITitle"
       :link="CompositionAPILink"
       :linkName="CompositionAPILinkName"
+      :isDisplayNoteView="isDisplayNoteView"
       class="noteCard"
     />
     <!-- Compontent語法box -->
@@ -141,6 +152,7 @@ const PiniaLinkName = ref(["About Pinia"]);
       :title="ComponentTitle"
       :link="ComponentLink"
       :linkName="ComponentLinkName"
+      :isDisplayNoteView="isDisplayNoteView"
       class="noteCard"
     />
     <!-- Pinia語法box -->
@@ -148,6 +160,7 @@ const PiniaLinkName = ref(["About Pinia"]);
       :title="PiniaTitle"
       :link="PiniaLink"
       :linkName="PiniaLinkName"
+      :isDisplayNoteView="isDisplayNoteView"
       class="noteCard"
     />
   </div>

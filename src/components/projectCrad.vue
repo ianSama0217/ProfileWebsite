@@ -17,6 +17,10 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  isDisplayProjectView: {
+    type: Function,
+    default: () => {},
+  },
 });
 </script>
 
@@ -28,7 +32,9 @@ const props = defineProps({
 
     <div class="titleArea">
       <h3>{{ props.projectTitle }}</h3>
-      <RouterLink :to="props.link" class="link">詳細資訊</RouterLink>
+      <RouterLink @click="isDisplayProjectView" :to="props.link" class="link"
+        >詳細資訊</RouterLink
+      >
     </div>
   </div>
 </template>
