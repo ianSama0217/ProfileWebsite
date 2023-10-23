@@ -89,9 +89,14 @@ const CompositionAPILinkName = ref([
 
 const ComponentTitle = ref("Compontent");
 //router to=""的值
-const ComponentLink = ref(["/note/Compontent/props", "/note/Compontent/emit"]);
+const ComponentLink = ref([
+  "/note/Compontent/props",
+  "/note/Compontent/emit",
+  "/note/Compontent/provide",
+  "/note/Compontent/inject",
+]);
 //標籤內名稱<routerlink>ComponentLinkName</routerlink>
-const ComponentLinkName = ref(["props", "emit"]);
+const ComponentLinkName = ref(["props", "emit", "provide", "inject"]);
 
 const PiniaTitle = ref("Pinia");
 //router to=""的值
