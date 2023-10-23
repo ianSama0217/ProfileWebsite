@@ -90,9 +90,14 @@ const CompositionAPILinkName = ref([
 
 const ComponentTitle = ref("Compontent");
 //router to=""的值
-const ComponentLink = ref(["/note/Compontent/props", "/note/Compontent/emit"]);
+const ComponentLink = ref([
+  "/note/Compontent/props",
+  "/note/Compontent/emit",
+  "/note/Compontent/provide",
+  "/note/Compontent/inject",
+]);
 //標籤內名稱<routerlink>ComponentLinkName</routerlink>
-const ComponentLinkName = ref(["props", "emit"]);
+const ComponentLinkName = ref(["props", "emit", "provide", "inject"]);
 
 const PiniaTitle = ref("Pinia");
 //router to=""的值
@@ -187,6 +192,38 @@ const getChildData = (data) => {
       "父組件透過emits定義的方法名稱來取得子組件傳遞的資料，通常也都是用按鈕來觸發事件",
     hint: "",
   },
+  provide: {
+    title: "provide",
+    source: `<script setup>
+import { ref, provide } from "vue";
+import provideChild from "../components/provideChild.vue";
+
+const msg = ref("fooooo!");
+const count = ref(1);
+const arr = ref([1]);
+
+//第一個參數是key，第二個是要給的value
+provide("for grandchild message", msg);
+provide("for grandchild count", count);
+provide("for grandchild arr", arr);
+};
+<script>`,
+    content:
+      "provide可用來傳遞資料給所有的子組件，不管層級有多深，都可以透過provide的方式將資料注入子組件，provide的第一個參數為傳遞資料的key，第二個參數為資料的value",
+    hint: "可以使用ref或reactive將響應式資料注入到子層組件",
+  },
+  inject: {
+    title: "inject",
+    source: `<script setup>
+import { inject } from "vue";
+const grandpaMsg = inject("for grandchild message");
+const groundCount = inject("for grandchild count");
+const grandArr = inject("for grandchild arr");
+<script>`,
+    content:
+      "inject可以將父組件provide的資料注入子組件，只要在inject輸入provide設定的key就可以使用了",
+    hint: "inject的資料僅能讀取，無法對value進行更新或修改參數",
+  },
 });
 </script>
 
@@ -256,7 +293,7 @@ const getChildData = (data) => {
   display: flex;
   position: relative;
   .sideBar {
-    width: 35vw;
+    width: 50vw;
     height: 100vh;
     padding-top: 1.5rem;
     display: flex;
