@@ -233,12 +233,32 @@ const codeObject = reactive({
     content: "v-bind可以賦予標籤變數，讓標籤可以動態更新資料",
     hint: "v-bind:class=`redFont`可以用語法糖改寫成:class=`redFont`，要注意動態賦予的屬性CSS會抓不到reference，但還是可以修改v-bind標籤的樣式",
   },
-  // vSlot:{
-  //   title:
-  //   source:
-  //   content:
-  //   hint:
-  // },
+  vSlot: {
+    title: "v-slot",
+    source: `<template>
+  <!-- 顯示全部的slot內容 -->
+  <vSlotText></vSlotText>
+  <!-- 設定default slot的值 -->
+  <vSlotText>
+    <slot>由父組件設定slot內容</slot>
+  </vSlotText>
+
+  <!-- 設定具名 slot的值 -->
+  <vSlotText>
+    <!-- 設定header slot -->
+    <template v-slot:header>
+      <h1>設定header slot內容</h1>
+    </template>
+    <!-- footer slot -->
+    <template #footer>
+      <h1>設定footer slot內容</h1>
+    </template>
+  </vSlotText>
+</template>`,
+    content:
+      "v-slot用於設定組件插槽，可以在組件設定加入的元素，也可以具名指定插槽的位置",
+    hint: "v-slot:header可以用語法糖改寫成#header，注意v-slot只能用在組件和template上",
+  },
 });
 </script>
 
@@ -308,7 +328,7 @@ const codeObject = reactive({
   display: flex;
   position: relative;
   .sideBar {
-    width: 55vw;
+    width: 58vw;
     height: 100vh;
     padding-top: 1.5rem;
     display: flex;
