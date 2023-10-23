@@ -106,7 +106,97 @@ const PiniaLink = ref(["/note/Pinia/About Pinia"]);
 const PiniaLinkName = ref(["About Pinia"]);
 
 //codeboard標題~內容
-const codeObject = reactive({});
+const codeObject = reactive({
+  AboutLifeCycle: {
+    title: "About life cycle",
+    source: `<script setup>
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  console.log("the component is now mounted.")
+})
+<script>`,
+    content:
+      "Vue的組件在創建時都需要經過一系列的初始化流程，在這個過程中會運行稱為生命週期的函式，開發者可以在特定階段運作自定義的程式",
+    hint: "使用生命週期函式時，Vue會自動將函式初始化到組件上，這些函式要在組件初始化時被同時註冊，因此要注意不要把生命週期函式放在async function裡面",
+  },
+  onMounted: {
+    title: "onMounted()",
+    source: `<script setup>
+import { ref, onMounted } from 'vue'
+
+const el = ref()
+
+onMounted(() => {
+  el.value // <div>
+})
+<script>
+
+<template>
+  <div ref="el"></div>
+</template>`,
+    content: "onMounted()功能為設定一個callbackFn，在組件被安裝完成後執行",
+    hint: "這個hook在伺服器端rendering期間不會被調用",
+  },
+  onUpdated: {
+    title: "onUpdated()",
+    source: `<script setup>
+import { ref, onUpdated } from 'vue'
+
+const count = ref(0)
+
+onUpdated(() => {
+
+  console.log(document.getElementById('count').textContent)
+})
+<script>
+
+<template>
+  <button id="count" @click="count++">{{ count }}</button>
+</template>`,
+    content: "onUpdated()會在組件因為響應式資料變更而更新DOM Tree後執行",
+    hint: "這個hook在伺服器端rendering期間不會被調用，注意不要在onUpdated()中更改組件的資料，可能會導致無限循環",
+  },
+  onUnmounted: {
+    title: "onUnmounted()",
+    source: `<script setup>
+import { onMounted, onUnmounted } from 'vue'
+
+let intervalId
+onMounted(() => {
+  intervalId = setInterval(() => {
+    // ...
+  })
+})
+
+onUnmounted(() => clearInterval(intervalId))
+<script>`,
+    content:
+      "onUnmounted()會在組件被移除之後執行函式，通常用來清理一些副作用，例如:計時器、DOM監聽事件",
+    hint: "這個hook在伺服器端rendering期間不會被調用",
+  },
+  onBeforeMount: {
+    title: "onBeforeMount()",
+    source: `function onBeforeMount(callback: () => void): void`,
+    content:
+      "onBeforeMount()會在組件被安裝之前執行函式，這個hook被執行時，組件已經完成響應式資料設定，但還沒建立DOM Node",
+    hint: "這個hook在伺服器端rendering期間不會被調用",
+  },
+  onBeforeUpdate: {
+    title: "onBeforeUpdate()",
+    source: `function onBeforeUpdate(callback: () => void): void`,
+    content:
+      "onBeforeUpdate()會在組件即將因為響應式資料更新而更新其DOM Node之前執行，這個hook可以在Vue更新DOM之前訪問DOM資料",
+    hint: "這個hook在伺服器端rendering期間不會被調用，在這個hook中更新資料也是安全的",
+  },
+  onBeforeUnmount: {
+    title: "onBeforeUnmount()",
+    source: `function onBeforeUnmount(callback: () => void): void`,
+    content:
+      "onBeforeUnmount()會在組件即將被移除之前執行，當這個hook被調用時，組件依然保持全部的功能",
+    hint: "這個hook在伺服器端rendering期間不會被調用",
+  },
+});
 </script>
 
 <template>
@@ -175,7 +265,7 @@ const codeObject = reactive({});
   display: flex;
   position: relative;
   .sideBar {
-    width: 55vw;
+    width: 45vw;
     height: 100vh;
     padding-top: 1.5rem;
     display: flex;
